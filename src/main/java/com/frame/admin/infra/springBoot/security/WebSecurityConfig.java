@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @RequiredArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final JwtProvider jwtProvider;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -20,6 +22,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/admin").permitAll()
-                .anyRequest().authenticated();
+                .antMatchers(HttpMethod.POST, "/admin/auth").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .apply(new JwtConfigure(jwtProvider));
     }
 }
