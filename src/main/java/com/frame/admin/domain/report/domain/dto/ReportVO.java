@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class GetReportsResponse {
+public class ReportVO {
     private Long reportId;
 
     private String content;
