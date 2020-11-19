@@ -7,11 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class GetReportsByPostUseCaseImpl implements GetReportsByPostUseCase {
+public class GetCountAboutReportsByPostUseCaseImpl implements GetCountAboutReportsByPostUseCase {
     private final ReportRepository reportRepository;
 
     @Override
-    public Iterable<Report> execute(Long postId) {
-        return reportRepository.findAllByPostNumber(postId);
+    public int execute(Long postId) {
+        return reportRepository.countByPostNumber(postId);
     }
 }
