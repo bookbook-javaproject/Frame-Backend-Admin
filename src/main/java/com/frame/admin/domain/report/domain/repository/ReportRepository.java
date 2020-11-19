@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface ReportRepository extends CrudRepository<Report, Long> {
-    public Iterable<Report> findAllByPostNumber(Long postId);
+    public int countByPostNumber(Long postId);
 }
