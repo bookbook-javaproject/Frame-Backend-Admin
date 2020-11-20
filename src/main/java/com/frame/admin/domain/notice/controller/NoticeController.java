@@ -4,6 +4,7 @@ import com.frame.admin.domain.admin.dto.LoginRequest;
 import com.frame.admin.domain.admin.dto.LoginResponse;
 import com.frame.admin.domain.admin.dto.RegisterRequest;
 import com.frame.admin.domain.notice.dto.CreateNoticeRequest;
+import com.frame.admin.domain.notice.dto.GetNoticeResponse;
 import com.frame.admin.domain.notice.service.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,8 @@ public class NoticeController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public void getNotice() {
-        // TODO
+    public GetNoticeResponse getNotice() {
+        return noticeService.getNotice();
     }
 
     @PostMapping()
