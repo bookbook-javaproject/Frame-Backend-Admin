@@ -2,7 +2,7 @@
 
 ## Explain
 
-Frame 메인 서비스 백엔드 어플리케이션 입니다.
+Frame 어드민 서비스 백엔드 어플리케이션 입니다.
 
 ## Git commit Convention
 
