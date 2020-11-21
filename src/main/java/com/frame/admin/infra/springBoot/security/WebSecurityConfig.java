@@ -22,6 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
                 .csrf().disable()
                 .sessionManagement().disable()
                 .formLogin().disable()
+                .cors().and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/admin").permitAll()
                 .antMatchers(HttpMethod.POST, "/admin/auth").permitAll()
