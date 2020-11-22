@@ -6,6 +6,7 @@ import com.frame.admin.domain.report.service.ReportService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class ReportController {
     }
 
     @DeleteMapping
-    public void approveReport(@RequestBody ApproveReportRequest request) {
+    public void approveReport(@RequestBody @Valid ApproveReportRequest request) {
         reportService.approveReport(request);
     }
 }
