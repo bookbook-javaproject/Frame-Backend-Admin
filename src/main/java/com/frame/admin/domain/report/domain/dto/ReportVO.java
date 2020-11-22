@@ -15,4 +15,6 @@ public class ReportVO {
     private String writer;
 
     private String reporter;
+
+    private Long postId;
 }
