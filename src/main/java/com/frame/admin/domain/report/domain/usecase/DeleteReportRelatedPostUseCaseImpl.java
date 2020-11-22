@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DeleteReportRelatedPostUseCaseImpl implements DeleteReportRelatedPostUseCase {
 
-    private ReportRepository reportRepository;
+    private final ReportRepository reportRepository;
 
     @Override
     public void execute(Long reportId) {
