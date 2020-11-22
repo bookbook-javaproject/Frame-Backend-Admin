@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/submission")
@@ -21,7 +23,7 @@ public class SubmissionController {
 
     @PatchMapping
     @ResponseStatus(HttpStatus.OK)
-    public void confirmAuthorSubmission(ConfirmAuthorSubmissionRequest request) {
+    public void confirmAuthorSubmission(@RequestBody @Valid ConfirmAuthorSubmissionRequest request) {
         submissionService.confirmAuthorSubmission(request);
     }
 }
