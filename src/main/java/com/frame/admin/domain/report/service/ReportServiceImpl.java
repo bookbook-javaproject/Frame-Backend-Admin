@@ -40,6 +40,7 @@ public class ReportServiceImpl implements ReportService {
                     .reportCount(Long.valueOf(getCountAboutReportsByPostUseCase.execute(postId)))
                     .writer(post.getWriter())
                     .reporter(report.getReporter())
+                    .postId(report.getPostNumber())
                     .build()
             );
         }
